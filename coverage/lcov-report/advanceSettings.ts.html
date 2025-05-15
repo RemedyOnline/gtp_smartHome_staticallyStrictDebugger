@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.05% </span>
+                <span class="strong">21.62% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/76</span>
+                <span class='fraction'>16/74</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>0/7</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.91% </span>
+                <span class="strong">22.53% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/73</span>
+                <span class='fraction'>16/71</span>
             </div>
         
             
@@ -358,16 +358,7 @@
 <a name='L293'></a><a href='#L293'>293</a>
 <a name='L294'></a><a href='#L294'>294</a>
 <a name='L295'></a><a href='#L295'>295</a>
-<a name='L296'></a><a href='#L296'>296</a>
-<a name='L297'></a><a href='#L297'>297</a>
-<a name='L298'></a><a href='#L298'>298</a>
-<a name='L299'></a><a href='#L299'>299</a>
-<a name='L300'></a><a href='#L300'>300</a>
-<a name='L301'></a><a href='#L301'>301</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L296'></a><a href='#L296'>296</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -377,6 +368,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -478,11 +473,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -668,15 +658,15 @@
 import { Chart } from "chart.js";
 // NOTE: In tests, Chart.js is not required. Tests should skip any code that depends on Chart.js.
 &nbsp;
-// import General from "./general.js";
-import Light from "./basicSettings";
-&nbsp;
 export interface ComponentInterface {
 	name: string;
 	numOfLights: number;
 	autoOn: string;
 	autoOff: string;
 }
+&nbsp;
+import General from "./general.js";
+import Light from "./basicSettings";
 &nbsp;
 class AdvanceSettings extends Light {
 	constructor() {
@@ -778,11 +768,6 @@ class AdvanceSettings extends Light {
 <span class="fstat-no" title="function not covered" >	modalPopUp(</span>element: HTMLElement) {
 		const selectedRoom = <span class="cstat-no" title="statement not covered" >this.getSelectedComponentName(element)!;</span>
 		const componentData = <span class="cstat-no" title="statement not covered" >this.getComponent(selectedRoom);</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >		<span class="missing-if-branch" title="if path not taken" >I</span>if (!componentData) {</span>
-<span class="cstat-no" title="statement not covered" >			return;</span>
-		}
-&nbsp;
 		const parentElement = <span class="cstat-no" title="statement not covered" >this.selector(</span>
 			".advanced_features_container"
 		) as HTMLElement;
@@ -838,7 +823,7 @@ class AdvanceSettings extends Light {
 		const { value } = <span class="cstat-no" title="statement not covered" >element;</span>
 &nbsp;
 		// when value is falsy
-<span class="cstat-no" title="statement not covered" >		<span class="missing-if-branch" title="if path not taken" >I</span>if (!!value) <span class="cstat-no" title="statement not covered" >return;</span></span>
+<span class="cstat-no" title="statement not covered" >		<span class="missing-if-branch" title="if path not taken" >I</span>if (!value) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
 		const component = <span class="cstat-no" title="statement not covered" >this.getComponentData(</span>
 			element,
@@ -870,7 +855,7 @@ class AdvanceSettings extends Light {
 		const { value } = <span class="cstat-no" title="statement not covered" >element;</span>
 &nbsp;
 		// when value is falsy
-<span class="cstat-no" title="statement not covered" >		<span class="missing-if-branch" title="if path not taken" >I</span>if (!!value) <span class="cstat-no" title="statement not covered" >return;</span></span>
+<span class="cstat-no" title="statement not covered" >		<span class="missing-if-branch" title="if path not taken" >I</span>if (!value) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
 		const component = <span class="cstat-no" title="statement not covered" >this.getComponentData(</span>
 			element,
@@ -935,7 +920,7 @@ class AdvanceSettings extends Light {
 	}
 &nbsp;
 	async <span class="fstat-no" title="function not covered" >timer(</span>time: Date, message: any, component: HTMLElement) {
-<span class="cstat-no" title="statement not covered" >		return new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		return new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
 			const checkAndTriggerAlarm = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
 				const now = <span class="cstat-no" title="statement not covered" >new Date();</span>
 &nbsp;
@@ -970,7 +955,7 @@ export default AdvanceSettings;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-15T12:33:50.639Z
+                at 2025-05-15T14:48:18.926Z
             </div>
         <script src="prettify.js"></script>
         <script>

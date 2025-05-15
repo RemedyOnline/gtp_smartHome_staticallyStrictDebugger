@@ -2,4 +2,5 @@ todo
 *.drawio
 .vscode/
 node_modules
-*myTs
+myTs
+/coverage
