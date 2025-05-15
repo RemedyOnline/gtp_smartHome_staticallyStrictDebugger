@@ -33,16 +33,16 @@ A modular, object-oriented Smart Home Control Panel built with TypeScript. This 
 - Test Coverage: Includes Jest test suites for critical logic like brightness calculation, preset handling, and timer scheduling.
 - UI Feedback: Real-time visual updates using Chart.js to indicate the state of each room.
 
-## 🚀 Getting Started
+# 🚀 Getting Started
 
-# Prerequisites
+## Prerequisites
 
 - Node.js (v18+ recommended)
 - npm or yarn
 - TypeScript (npm install -g typescript)
 - Jest (for testing)
 
-# Install & Run
+## Install & Run
 
 `npm install`
 `npm run dev # Start development server`

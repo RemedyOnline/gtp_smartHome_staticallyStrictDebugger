@@ -1,18 +1,4 @@
-# BUGS FIXES ON _#basicSettings.ts_
-
-# (all line numbers are with reference to the default template files)
-
-- _Light Intensity Adjustment Bug_
-  In `handleLightIntensitySlider` (line 87), the `componentData.isLightOn` was being set to `false` even when intensity > 0. The correct logic is to set it to `true` when intensity is greater than 0.
-
-- _Slider Value Assignment Bug_
-  In `toggleLightSwitch` (line 66), the slider value was assigned directly without converting the number to a string, which may cause unexpected behavior. The fix is to use `.toString()` on the number value before assigning to `slider.value`.
-
-- _NaN Type Check Bug_
-  In `handleLightIntensitySlider` (line 84), the expression `typeof(intensity) === isNaN` is invalid. It was corrected to a proper check using `isNaN(intensity)`.
-
-- _General Type Safety and Null Checks_
-  Multiple updates were made to include `HTMLElement | null` checks (e.g., in `lightSwitchOn`, `lightComponentSelectors`, `toggleLightSwitch`) to prevent runtime errors in TypeScript and improve type safety.
+# [NB: all line numbers are with a reference to the default starter-file codebase...]
 
 # BUGS FIXES ON _#main.ts_
 
@@ -33,6 +19,20 @@
 
 - _Missing Non-Null Assertions Bug_
   Some DOM element queries like `document.querySelector('.entry_point')` might return `null`. In the updated version, non-null assertions (!) or type assertions were added to avoid potential `null` errors during runtime, assuming these elements exist in the DOM.
+
+# BUGS FIXES ON _#basicSettings.ts_
+
+- _Light Intensity Adjustment Bug_
+  In `handleLightIntensitySlider` (line 87), the `componentData.isLightOn` was being set to `false` even when intensity > 0. The correct logic is to set it to `true` when intensity is greater than 0.
+
+- _Slider Value Assignment Bug_
+  In `toggleLightSwitch` (line 66), the slider value was assigned directly without converting the number to a string, which may cause unexpected behavior. The fix is to use `.toString()` on the number value before assigning to `slider.value`.
+
+- _NaN Type Check Bug_
+  In `handleLightIntensitySlider` (line 84), the expression `typeof(intensity) === isNaN` is invalid. It was corrected to a proper check using `isNaN(intensity)`.
+
+- _General Type Safety and Null Checks_
+  Multiple updates were made to include `HTMLElement | null` checks (e.g., in `lightSwitchOn`, `lightComponentSelectors`, `toggleLightSwitch`) to prevent runtime errors in TypeScript and improve type safety.
 
 # BUGS FIXES ON _#advanceSettings.ts_
 
