@@ -1,9 +1,4 @@
 "use strict";
-
-// imports
-import Light from "./basicSettings";
-import AdvanceSettings from "./advanceSettings";
-
 // elements declarations
 const homepageButton: HTMLElement = document.querySelector(".entry_point")!;
 const homepage: HTMLElement = document.querySelector("main")!;
@@ -15,6 +10,10 @@ const advanceFeaturesContainer: HTMLElement = document.querySelector(
 ) as HTMLElement;
 const nav: HTMLElement = document.querySelector("nav")!;
 const loader: HTMLElement = document.querySelector(".loader-container")!;
+
+// imports
+import Light from "./basicSettings";
+import AdvanceSettings from "./advanceSettings";
 
 // object creation
 const lightController = new Light();
@@ -58,7 +57,7 @@ mainRoomsContainer.addEventListener("click", (e) => {
 
 mainRoomsContainer.addEventListener("change", (e) => {
 	const slider = e.target as HTMLInputElement;
-	const value = slider?.value;
+	const value = +slider?.value;
 
 	lightController.handleLightIntensitySlider(slider, value);
 });
