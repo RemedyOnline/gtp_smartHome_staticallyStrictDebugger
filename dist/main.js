@@ -1,6 +1,4 @@
 "use strict";
-import Light from "./basicSettings.js";
-import AdvanceSettings from "./advanceSettings.js";
 const homepageButton = document.querySelector(".entry_point");
 const homepage = document.querySelector("main");
 const mainRoomsContainer = document.querySelector(".application_container");
@@ -9,6 +7,8 @@ const advanceFeaturesContainer = document.querySelector(
 );
 const nav = document.querySelector("nav");
 const loader = document.querySelector(".loader-container");
+import Light from "./basicSettings.js";
+import AdvanceSettings from "./advanceSettings.js";
 const lightController = new Light();
 const advancedSettings = new AdvanceSettings();
 let selectedComponent;
