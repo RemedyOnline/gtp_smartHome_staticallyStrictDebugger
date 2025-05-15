@@ -1,6 +1,7 @@
 "use strict";
 // @ts-ignore
 import { Chart } from "chart.js";
+// NOTE: In tests, Chart.js is not required. Tests should skip any code that depends on Chart.js.
 
 export interface ComponentInterface {
 	name: string;

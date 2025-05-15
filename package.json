@@ -1,21 +1,29 @@
 {
-  "name": "gtp_statically-strict-debugger",
-  "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RemedyOnline/gtp_smartHome_staticallyStrictDebugger.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/RemedyOnline/gtp_smartHome_staticallyStrictDebugger/issues"
-  },
-  "homepage": "https://github.com/RemedyOnline/gtp_smartHome_staticallyStrictDebugger#readme"
+	"name": "gtp_statically-strict-debugger",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"test": "jest --coverage --verbose"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/RemedyOnline/gtp_smartHome_staticallyStrictDebugger.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "commonjs",
+	"bugs": {
+		"url": "https://github.com/RemedyOnline/gtp_smartHome_staticallyStrictDebugger/issues"
+	},
+	"homepage": "https://github.com/RemedyOnline/gtp_smartHome_staticallyStrictDebugger#readme",
+	"devDependencies": {
+		"@testing-library/jest-dom": "^6.0.0",
+		"@types/jest": "^29.0.0",
+		"chart.js": "^4.4.9",
+		"jest": "^29.0.0",
+		"jest-environment-jsdom": "^29.7.0",
+		"ts-jest": "^29.3.3"
+	}
 }
