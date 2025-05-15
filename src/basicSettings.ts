@@ -1,6 +1,6 @@
 "use strict";
 
-import General from "./general";
+import General from "./general.js";
 
 class Light extends General {
 	constructor() {
@@ -51,7 +51,7 @@ class Light extends General {
 
 	lightComponentSelectors(lightButtonElement: HTMLElement | null) {
 		const room = this.getSelectedComponentName(lightButtonElement)!;
-		const componentData = this.getComponent(room[0]);
+		const componentData = this.getComponent(room);
 		const childElement = lightButtonElement?.firstElementChild as HTMLElement;
 		const background = this.closestSelector(
 			lightButtonElement,
@@ -90,10 +90,10 @@ class Light extends General {
 		}
 	}
 
-	handleLightIntensitySlider(element: HTMLElement, intensity: string | number) {
+	handleLightIntensitySlider(element: HTMLElement, intensity: number) {
 		const { componentData } = this.lightComponentSelectors(element);
 
-		if (typeof intensity !== "number" || isNaN(Number(intensity))) return;
+		if (typeof intensity !== "number" || isNaN(intensity)) return;
 
 		componentData.lightIntensity = intensity;
 
@@ -109,7 +109,7 @@ class Light extends General {
 			return;
 		}
 
-		componentData.isLightOn = false;
+		componentData.isLightOn = true;
 		this.sliderLight(componentData.isLightOn, lightSwitch);
 	}
 
@@ -134,41 +134,3 @@ class Light extends General {
 }
 
 export default Light;
-
-const light = new Light();
-
-document.addEventListener("DOMContentLoaded", () => {
-	const lightButtons = document.querySelectorAll(".light-switch");
-	const sliders = document.querySelectorAll(".light-intensity");
-
-	lightButtons.forEach((btn) => {
-		btn.addEventListener("click", () => {
-			light.toggleLightSwitch(btn as HTMLElement);
-			const room = btn.closest(".rooms");
-			if (!room) return;
-
-			const img = room.querySelector("img");
-			if (!img) return;
-
-			const currentBrightness =
-				getComputedStyle(img).filter.includes("brightness(0)");
-
-			if (currentBrightness) {
-				img.style.filter = "brightness(1)";
-			} else {
-				img.style.filter = "brightness(0)";
-			}
-			console.log("btn clicked");
-		});
-	});
-
-	sliders.forEach((slider) => {
-		slider.addEventListener("input", () => {
-			console.log("slider touched");
-			const value = (slider as HTMLInputElement).value;
-			console.log("slider touched");
-			light.handleLightIntensitySlider(slider as HTMLElement, Number(value));
-		});
-		console.log("slider touched");
-	});
-});

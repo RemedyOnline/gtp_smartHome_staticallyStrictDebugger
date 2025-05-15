@@ -66,9 +66,6 @@ class AdvanceSettings extends Light {
 	modalPopUp(element) {
 		const selectedRoom = this.getSelectedComponentName(element);
 		const componentData = this.getComponent(selectedRoom);
-		if (!componentData) {
-			return;
-		}
 		const parentElement = this.selector(".advanced_features_container");
 		this.removeHidden(parentElement);
 		this.renderHTML(
@@ -118,7 +115,7 @@ class AdvanceSettings extends Light {
 			"input"
 		);
 		const { value } = element;
-		if (!!value) return;
+		if (!value) return;
 		const component = this.getComponentData(
 			element,
 			".advanced_features",
@@ -138,7 +135,7 @@ class AdvanceSettings extends Light {
 			"input"
 		);
 		const { value } = element;
-		if (!!value) return;
+		if (!value) return;
 		const component = this.getComponentData(
 			element,
 			".advanced_features",
@@ -190,7 +187,7 @@ class AdvanceSettings extends Light {
 	}
 	timer(time, message, component) {
 		return __awaiter(this, void 0, void 0, function* () {
-			return new Promise((resolve) => {
+			return new Promise((resolve, reject) => {
 				const checkAndTriggerAlarm = () => {
 					const now = new Date();
 					if (

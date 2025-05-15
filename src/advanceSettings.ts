@@ -2,15 +2,15 @@
 // @ts-ignore
 import { Chart } from "chart.js";
 
-// import General from "./general.js";
-import Light from "./basicSettings";
-
 export interface ComponentInterface {
 	name: string;
 	numOfLights: number;
 	autoOn: string;
 	autoOff: string;
 }
+
+import General from "./general.js";
+import Light from "./basicSettings";
 
 class AdvanceSettings extends Light {
 	constructor() {
@@ -112,11 +112,6 @@ class AdvanceSettings extends Light {
 	modalPopUp(element: HTMLElement) {
 		const selectedRoom = this.getSelectedComponentName(element)!;
 		const componentData = this.getComponent(selectedRoom);
-
-		if (!componentData) {
-			return;
-		}
-
 		const parentElement = this.selector(
 			".advanced_features_container"
 		) as HTMLElement;
@@ -172,7 +167,7 @@ class AdvanceSettings extends Light {
 		const { value } = element;
 
 		// when value is falsy
-		if (!!value) return;
+		if (!value) return;
 
 		const component = this.getComponentData(
 			element,
@@ -204,7 +199,7 @@ class AdvanceSettings extends Light {
 		const { value } = element;
 
 		// when value is falsy
-		if (!!value) return;
+		if (!value) return;
 
 		const component = this.getComponentData(
 			element,
@@ -269,7 +264,7 @@ class AdvanceSettings extends Light {
 	}
 
 	async timer(time: Date, message: any, component: HTMLElement) {
-		return new Promise((resolve) => {
+		return new Promise((resolve, reject) => {
 			const checkAndTriggerAlarm = () => {
 				const now = new Date();
 
