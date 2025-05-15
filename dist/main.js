@@ -49,7 +49,7 @@ mainRoomsContainer.addEventListener("click", (e) => {
 });
 mainRoomsContainer.addEventListener("change", (e) => {
 	const slider = e.target;
-	const value = slider === null || slider === void 0 ? void 0 : slider.value;
+	const value = +(slider === null || slider === void 0 ? void 0 : slider.value);
 	lightController.handleLightIntensitySlider(slider, value);
 });
 advanceFeaturesContainer.addEventListener("click", (e) => {
